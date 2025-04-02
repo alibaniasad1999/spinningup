@@ -1,7 +1,7 @@
 from utils.user_config import DEFAULT_DATA_DIR, FORCE_DATESTAMP, \
                                DEFAULT_SHORTHAND, WAIT_BEFORE_LAUNCH
 from utils.logx import colorize
-from utils.mpi_tools import mpi_fork, msg
+# from utils.mpi_tools import mpi_fork, msg
 from utils.serialization_utils import convert_json
 import base64
 from copy import deepcopy
@@ -156,7 +156,7 @@ def call_experiment(exp_name, thunk, seed=0, num_cpu=1, data_dir=None,
             del kwargs['env_name']
 
         # Fork into multiple processes
-        mpi_fork(num_cpu)
+        # mpi_fork(num_cpu)
 
         # Run thunk
         thunk(**kwargs)
